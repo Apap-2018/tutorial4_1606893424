@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>View All Pilot</title>
+	</head>
+	<body>
+		<tr th:each="pilot : ${listPilot}">
+			<h3 th:text="'License Number : '+${pilot.licenseNumber}" ></h3>
+			<h3 th:text="'Name : '+${pilot.name}" ></h3>
+			<h3 th:text="'Fly Hour : '+${pilot.flyHour}" ></h3>
+			
+			<form th:action="@{'/pilot/delete/' + ${pilot.id}}" > 
+						<button type="submit">Delete</button> 
+				</form>
+				<br>
+				<form th:action="@{'/pilot/update/' + ${pilot.id}}"  > 
+						<button type="submit">Update</button> 
+				</form>
+			
+		</tr>
+	
+	
+	
+		
+		     
+		
+	</body>
+
+
+</html>
